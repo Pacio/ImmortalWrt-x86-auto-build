@@ -20,6 +20,11 @@ on:
         required: false
         type: boolean
         default: false
+      ssh_on_failure:
+        description: 'SSH connection on compile failure'
+        required: false
+        type: boolean
+        default: false
 
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
@@ -146,7 +151,7 @@ jobs:
     # 优化点 3：增加编译失败时的 tmate 挂起机制，允许你连入终端进行人工干预
     - name: Setup tmate session on compile failure
       uses: mxschmitt/action-tmate@v3
-      if: failure() && steps.compile.outcome == 'failure'
+      if: failure() && steps.compile.outcome == 'failure' && inputs.ssh_on_failure == true
       with:
         limit-access-to-actor: false
 
