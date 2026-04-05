@@ -121,6 +121,14 @@ jobs:
         name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: openwrt/bin
 
+    # ================= 增加的排错步骤 =================
+    - name: Setup tmate session on compile failure
+      uses: mxschmitt/action-tmate@v3
+      if: failure() && steps.compile.outcome == 'failure'
+      with:
+        limit-access-to-actor: false # 设置为 true 可以限制只有触发工作流的 GitHub 账号绑定的 SSH key 才能连接（更安全）
+    # ==================================================
+
     - name: Organize files
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
