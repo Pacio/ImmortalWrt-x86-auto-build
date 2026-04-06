@@ -92,15 +92,6 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
-    # 优化点 2：引入 dl 目录缓存，避免每次编译重复下载几 GB 的源码包，节省大量时间
-    - name: Cache dl directory
-      uses: actions/cache@v4
-      with:
-        path: openwrt/dl
-        key: ${{ runner.os }}-openwrt-dl-${{ hashFiles('openwrt/feeds.conf.default') }}
-        restore-keys: |
-          ${{ runner.os }}-openwrt-dl-
-
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
