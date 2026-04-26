@@ -10,6 +10,9 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
+#修改lan
+sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+
 #Add new luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-openclash
 git clone -b dev --depth 1 https://github.com/vernesong/OpenClash.git /tmp/OpenClash
