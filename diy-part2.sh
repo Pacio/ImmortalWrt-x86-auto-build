@@ -18,3 +18,19 @@ mv /tmp/OpenClash/luci-app-openclash package/
 git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki.git /tmp/nikki
 mv /tmp/nikki/luci-app-nikki package/
 mv /tmp/nikki/nikki package/
+
+# 移除 openwrt feeds 自带的核心库
+rm -rf feeds/packages/net/{xray-core,v2ray-geodata,daed,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls}
+git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/passwall-packages
+
+# 移除 openwrt feeds 过时的luci版本
+rm -rf feeds/luci/applications/luci-app-passwall
+git clone https://github.com/Openwrt-Passwall/openwrt-passwall package/passwall-luci
+
+#移除旧版daed
+rm -rf feeds/luci/applications/luci-app-daed
+git clone https://github.com/QiuSimons/luci-app-daed package/dae
+
+#添加podman 
+git clone --depth 1 --single-branch https://github.com/breeze303/openwrt-podman package/podman
+./scripts/feeds install -a
