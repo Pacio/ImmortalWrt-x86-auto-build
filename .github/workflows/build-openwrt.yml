@@ -42,7 +42,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     # 增加权限声明，确保 Release 和删除工作流等步骤能正常运作
     permissions:
       contents: write
