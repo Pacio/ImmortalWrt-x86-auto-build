@@ -10,10 +10,10 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-#修改lan
+# 修改lan
 sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 
-#Add new luci-app-openclash
+# Add new luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-openclash
 git clone -b dev --depth 1 https://github.com/vernesong/OpenClash.git /tmp/OpenClash
 mv /tmp/OpenClash/luci-app-openclash package/
@@ -30,12 +30,16 @@ git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/
 rm -rf feeds/luci/applications/luci-app-passwall
 git clone https://github.com/Openwrt-Passwall/openwrt-passwall package/passwall-luci
 
-#移除旧版daed
+# 移除旧版homeproxy
+rm -rf feeds/luci/applications/luci-app-homeproxy
+git clone https://github.com/VIKINGYFY/homeproxy package/homeproxy
+
+# 移除旧版daed
 rm -rf feeds/packages/net/dae
 rm -rf feeds/packages/net/daed
 rm -rf feeds/luci/applications/luci-app-daed
 git clone https://github.com/QiuSimons/luci-app-daed package/dae
 
-#添加podman 
+# 添加podman 
 git clone --depth 1 --single-branch https://github.com/breeze303/openwrt-podman package/podman
 ./scripts/feeds install -a
