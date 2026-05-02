@@ -31,6 +31,8 @@ rm -rf feeds/luci/applications/luci-app-passwall
 git clone https://github.com/Openwrt-Passwall/openwrt-passwall package/passwall-luci
 
 #移除旧版daed
+rm -rf feeds/packages/net/dae
+rm -rf feeds/packages/net/daed
 rm -rf feeds/luci/applications/luci-app-daed
 git clone https://github.com/QiuSimons/luci-app-daed package/dae
 
