@@ -35,8 +35,8 @@ rm -rf feeds/luci/applications/luci-app-homeproxy
 git clone https://github.com/VIKINGYFY/homeproxy package/homeproxy
 
 # 移除旧版daed
-rm -rf feeds/packages/net/dae
-rm -rf feeds/packages/net/daed
+# rm -rf feeds/packages/net/dae
+# rm -rf feeds/packages/net/daed
 rm -rf feeds/luci/applications/luci-app-daed
 git clone https://github.com/QiuSimons/luci-app-daed package/dae
 
