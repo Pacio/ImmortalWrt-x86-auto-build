@@ -31,8 +31,8 @@ rm -rf feeds/luci/applications/luci-app-passwall
 git clone https://github.com/Openwrt-Passwall/openwrt-passwall package/passwall-luci
 
 #移除旧版daed
-# rm -rf feeds/luci/applications/luci-app-daed
-# git clone https://github.com/QiuSimons/luci-app-daed package/dae
+rm -rf feeds/luci/applications/luci-app-daed
+git clone https://github.com/QiuSimons/luci-app-daed package/dae
 
 #添加podman 
 git clone --depth 1 --single-branch https://github.com/breeze303/openwrt-podman package/podman
