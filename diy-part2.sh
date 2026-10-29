@@ -37,6 +37,7 @@ git clone https://github.com/VIKINGYFY/homeproxy package/homeproxy
 # 移除旧版daed
 rm -rf feeds/packages/net/dae
 rm -rf feeds/packages/net/daed
+rm -rf feeds/packages/net/honk
 rm -rf feeds/luci/applications/luci-app-daed
 rm -rf feeds/luci/applications/luci-app-honk
 #git clone https://github.com/kenzok8/openwrt-daede
