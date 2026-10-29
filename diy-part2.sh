@@ -32,7 +32,7 @@ git clone https://github.com/Openwrt-Passwall/openwrt-passwall package/passwall-
 
 # 移除旧版homeproxy
 rm -rf feeds/luci/applications/luci-app-homeproxy
-git clone https://github.com/VIKINGYFY/homeproxy package/homeproxy
+git clone https://github.com/stmtc233/HomeProxy-NEXT package/homeproxy
 
 # 移除旧版daed
 rm -rf feeds/packages/net/dae
@@ -40,8 +40,8 @@ rm -rf feeds/packages/net/daed
 rm -rf feeds/packages/net/honk
 rm -rf feeds/luci/applications/luci-app-daed
 rm -rf feeds/luci/applications/luci-app-honk
-#git clone https://github.com/kenzok8/openwrt-daede
-git clone https://github.com/kenzok8/openwrt-honk
+#git clone https://github.com/kenzok8/openwrt-daede package/daede
+git clone https://github.com/kenzok8/openwrt-honk package/honk
 
 # 添加mosdns
 rm -rf feeds/packages/net/mosdns
