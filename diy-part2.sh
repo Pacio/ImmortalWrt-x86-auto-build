@@ -23,7 +23,7 @@ mv /tmp/nikki/luci-app-nikki package/
 mv /tmp/nikki/nikki package/
 
 # 移除 openwrt feeds 自带的核心库
-rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,v2ray-plugin,xray-plugin,geoview,shadow-tls}
+rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,v2ray-plugin,xray-plugin,geoview,shadow-tls,smartdns}
 git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/passwall-packages
 
 # 移除 openwrt feeds 过时的luci版本
@@ -38,7 +38,9 @@ git clone https://github.com/VIKINGYFY/homeproxy package/homeproxy
 rm -rf feeds/packages/net/dae
 rm -rf feeds/packages/net/daed
 rm -rf feeds/luci/applications/luci-app-daed
-git clone https://github.com/kenzok8/openwrt-daede package/daede
+rm -rf feeds/luci/applications/luci-app-honk
+#git clone https://github.com/kenzok8/openwrt-daede
+git clone https://github.com/kenzok8/openwrt-honk
 
 # 添加mosdns
 rm -rf feeds/packages/net/mosdns
