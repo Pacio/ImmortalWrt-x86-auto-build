@@ -40,16 +40,12 @@ rm -rf feeds/packages/net/daed
 rm -rf feeds/packages/net/honk
 rm -rf feeds/luci/applications/luci-app-daed
 rm -rf feeds/luci/applications/luci-app-honk
-#git clone https://github.com/kenzok8/openwrt-daede package/daede
 git clone https://github.com/kenzok8/openwrt-honk package/honk
-
-# 添加mosdns
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/luci/applications/luci-app-mosdns
 git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
-
-# 添加podman 
 git clone https://github.com/Zerogiven-OpenWRT-Packages/luci-app-podman.git package/luci-app-podman
+#git clone https://github.com/kenzok8/openwrt-daede package/daede
 
 # 更换Geodata
 # rm -rf feeds/packages/net/v2ray-geodata
