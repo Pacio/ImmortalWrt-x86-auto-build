@@ -49,8 +49,7 @@ rm -rf feeds/luci/applications/luci-app-mosdns
 git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
 
 # 添加podman 
-git clone --depth 1 --single-branch https://github.com/breeze303/openwrt-podman package/podman
-./scripts/feeds install -a
+git clone https://github.com/Zerogiven-OpenWRT-Packages/luci-app-podman.git package/luci-app-podman
 
 # 更换Geodata
 # rm -rf feeds/packages/net/v2ray-geodata
